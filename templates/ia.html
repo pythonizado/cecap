@@ -290,7 +290,7 @@ button:active {
     <audio id="iglesia" src="/audios/iglesia.mp3"></audio>
     <audio id="piedraAlta" src="/audios/piedraAlta.mp3"></audio>
     <audio id="sanCono" src="/audios/sanCono.mp3"></audio>
-    <audio id="julio" src="/audios/julio.mp3"></audio>
+    <!-- <audio id="julio" src="/audios/julio.mp3"></audio> -->
     <audio id="molino" src="/audios/molino.mp3"></audio>
     <audio id="ranchito" src="/audios/ranchito.mp3"></audio>
     <audio id="robaina" src="/audios/robaina.mp3"></audio>
@@ -420,7 +420,7 @@ button:active {
             let audioIglesia = document.getElementById("iglesia");
             let audioPiedraAlta = document.getElementById("piedraAlta");
             let audioSanCono = document.getElementById("sanCono");
-            let audioJulio = document.getElementById("julio");
+            //let audioJulio = document.getElementById("julio");
             let audioMolino = document.getElementById("molino");  
             let audioRanchito = document.getElementById("ranchito");
             let audioRobaina = document.getElementById("robaina");
@@ -436,8 +436,8 @@ button:active {
             audioPiedraAlta.currentTime = 0;
             audioSanCono.pause();
             audioSanCono.currentTime = 0;
-            audioJulio.pause();
-            audioJulio.currentTime = 0;
+            //audioJulio.pause();
+            //audioJulio.currentTime = 0;
             audioMolino.pause();
             audioMolino.currentTime = 0;
             audioRanchito.pause();
@@ -454,15 +454,15 @@ button:active {
             if (mejorClase === "iglesia") {
                 audioIglesia  .play();
             }
-            if (mejorClase === "piedraAlta") {
+            if (mejorClase === "piedra") {
                 audioPiedraAlta.play();
             }
-            if (mejorClase === "sanCono") {
+            if (mejorClase === "sancono") {
                 audioSanCono.play();
             }
-            if (mejorClase === "julio") {
-                audioJulio.play();
-            }
+           // if (mejorClase === "julio") {
+             //   audioJulio.play();
+            //}
             if (mejorClase === "molino") {
                 audioMolino.play();
             }
