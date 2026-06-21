@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página CECAP</title>
+    <style>
+ /* === RESET BASE === */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #fff;
+  color: #111;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* === NAVEGACIÓN FIJA SUPERIOR === */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #000;
+  z-index: 1000;
+  padding: 20px 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  transition: opacity 0.3s ease;
+}
+
+nav ul li a:hover {
+  opacity: 0.5;
+}
+
+/* === ESPACIO PARA EL NAV FIJO === */
+header {
+  height: 80px;
+}
+
+/* === LOGO === */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0 2rem;
+}
+
+.logo img {
+  width: 200px;
+  height: auto;
+}
+
+/* === SECCIÓN PRINCIPAL === */
+.main-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem 5rem;
+  text-align: left;
+}
+
+.main-content img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 2.5rem;
+  display: block;
+}
+
+.main-content p {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #111;
+  font-weight: 400;
+  white-space: pre-line;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* === FOOTER === */
+footer {
+  border-top: 1px solid #000;
+  background: #ffffff;
+  padding: 3rem 1rem;
+  color: #111;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer-container div {
+  flex: 1 1 250px;
+}
+
+.footer-container h3,
+.footer-container h4 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.footer-container p,
+.footer-container a {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #111;
+  text-decoration: none;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+  opacity: 0.5;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  color: #555;
+}
+
+/* === ANIMACIONES === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .main-content p {
+    font-size: 1rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo img {
+    width: 150px;
+  }
+}
+
+/* css para esta pagina*/
+
+main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+main p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.ia-container {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+}
+
+button {
+    background: #0d6efd;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+#label-container {
+    margin-top: 20px;
+}
+
+#label-container div {
+    background: white;
+    margin: 8px auto;
+    max-width: 300px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    font-weight: bold;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li style="margin-top: 25px;text-align: center;"><a href="material.html">Patrimonio <br> Material</a></li>
+      <li style="margin-top: 25px;text-align: center;"><a href="inmaterial.html" style="text-align: center;">Patrimonio <br> Inmaterial</a></li>
+      <li><a href="mapa.html">Mapa</a></li>
+      <li><a href="juegos.html">Juegos</a></li>
+      <li><a href="ia.html">IA</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+  <br>
+  <br>
+  <div class="logo">
+   <img src="/img/cecapLogo.png" alt="logo de CECAP">
+  </div>
+
+<main>
+
+    <h2>Bienvenido a nuestra sección de reconocimineto de nuestro patrimonio cultural</h2>
+    <p>Acerque a la cámara una foto de un objeto del patrimonio cultural de Florida</p>
+    <br>
+    <hr>
+    <br>
+    <button onclick="conectarMicrobit()">
+    Conectar Microbit
+</button>
+    <br>
+    <br>
+    <div>Teachable Machine Image Model</div>
+    <button type="button" onclick="init()">Start</button>
+    <div id="webcam-container"></div>
+    <div id="label-container"></div>
+    <audio id="eccoo" src="/audios/eccoo.mp3"></audio>
+    <audio id="iglesia" src="/audios/iglesia.mp3"></audio>
+    <audio id="piedraAlta" src="/audios/piedraAlta.mp3"></audio>
+    <audio id="sanCono" src="/audios/sanCono.mp3"></audio>
+    <audio id="julio" src="/audios/julio.mp3"></audio>
+    <audio id="molino" src="/audios/molino.mp3"></audio>
+    <audio id="ranchito" src="/audios/ranchito.mp3"></audio>
+    <audio id="robaina" src="/audios/robaina.mp3"></audio>
+    <audio id="asamblea" src="/audios/asamblea.mp3"></audio>
+
+
+
+    <!--comienza el script que usa la ia-->
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script type="text/javascript">
+        // More API functions here:
+        // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+
+        // the link to your model provided by Teachable Machine export panel
+        const URL = "https://teachablemachine.withgoogle.com/models/gXKkBoGUc/";
+
+        let model, webcam, labelContainer, maxPredictions;
+        let port;
+        let ultimaClaseDetectada = "";
+        let writer;
+
+        // Load the image model and setup the webcam
+        async function init() {
+            const modelURL = URL + "model.json";
+            const metadataURL = URL + "metadata.json";
+
+            // load the model and metadata
+            // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+            // or files from your local hard drive
+            // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+            model = await tmImage.load(modelURL, metadataURL);
+            maxPredictions = model.getTotalClasses();
+
+            // Convenience function to setup a webcam
+            const flip = true; // whether to flip the webcam
+            webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+            await webcam.setup(); // request access to the webcam
+            await webcam.play();
+            window.requestAnimationFrame(loop);
+
+            // append elements to the DOM
+            document.getElementById("webcam-container").appendChild(webcam.canvas);
+            labelContainer = document.getElementById("label-container");
+            for (let i = 0; i < maxPredictions; i++) { // and class labels
+                labelContainer.appendChild(document.createElement("div"));
+            }
+        }
+
+        // Conectar a la micro:bit
+        async function conectarMicrobit() {
+
+          try {
+
+              port = await navigator.serial.requestPort();
+
+              await port.open({
+                  baudRate: 9600
+              });
+
+              const encoder = new TextEncoderStream();
+
+              encoder.readable.pipeTo(port.writable);
+
+              writer = encoder.writable.getWriter();
+
+              console.log("Microbit conectada");
+
+          } catch(error) {
+
+              console.log(error);
+
+          }
+
+      }
+      // Enviar texto a la micro:bit
+      async function enviarMicrobit(texto) {
+
+        if (!writer) {
+            console.log("Microbit no conectada");
+            return;
+        }
+
+        await writer.write(texto + "\n");
+
+        console.log("Enviado: " + texto);
+      }
+
+
+      async function loop() {
+          webcam.update(); // update the webcam frame
+          await predict();
+          window.requestAnimationFrame(loop);
+      }
+
+        // run the webcam image through the image model
+        async function predict() {
+            // predict can take in an image, video or canvas html element
+            const prediction = await model.predict(webcam.canvas);
+            let mejorProbabilidad = 0;
+            let mejorClase = "";
+
+            for (let i = 0; i < maxPredictions; i++) {
+                const prob = prediction[i].probability;
+                const classPrediction =
+                    prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+                labelContainer.childNodes[i].innerHTML = classPrediction;
+
+                //copio
+
+                 // Detectar la mejor predicción
+            if (prob > mejorProbabilidad) {
+                mejorProbabilidad = prob;
+                mejorClase = prediction[i].className;
+            }
+        }
+
+            if (mejorProbabilidad > 0.80 && mejorClase !== ultimaClaseDetectada) {
+            
+              // Enviar la clase detectada a la micro:bit
+            await enviarMicrobit(mejorClase);
+            
+            
+            let audioEccoo = document.getElementById("eccoo");
+            let audioIglesia = document.getElementById("iglesia");
+            let audioPiedraAlta = document.getElementById("piedraAlta");
+            let audioSanCono = document.getElementById("sanCono");
+            let audioJulio = document.getElementById("julio");
+            let audioMolino = document.getElementById("molino");  
+            let audioRanchito = document.getElementById("ranchito");
+            let audioRobaina = document.getElementById("robaina");
+            let audioAsamblea = document.getElementById("asamblea");
+
+
+            // detener ambos antes de reproducir
+            audioEccoo.pause();
+            audioEccoo.currentTime = 0;
+            audioIglesia.pause();
+            audioIglesia.currentTime = 0;
+            audioPiedraAlta.pause();
+            audioPiedraAlta.currentTime = 0;
+            audioSanCono.pause();
+            audioSanCono.currentTime = 0;
+            audioJulio.pause();
+            audioJulio.currentTime = 0;
+            audioMolino.pause();
+            audioMolino.currentTime = 0;
+            audioRanchito.pause();
+            audioRanchito.currentTime = 0;
+            audioRobaina.pause();
+            audioRobaina.currentTime = 0;
+            audioAsamblea.pause();
+            audioAsamblea.currentTime = 0;
+
+            if (mejorClase === "eccoo") {
+                audioEccoo.play();
+            }
+
+            if (mejorClase === "iglesia") {
+                audioIglesia  .play();
+            }
+            if (mejorClase === "piedraAlta") {
+                audioPiedraAlta.play();
+            }
+            if (mejorClase === "sanCono") {
+                audioSanCono.play();
+            }
+            if (mejorClase === "julio") {
+                audioJulio.play();
+            }
+            if (mejorClase === "molino") {
+                audioMolino.play();
+            }
+            if (mejorClase === "ranchito") {
+                audioRanchito.play();
+            }
+            if (mejorClase === "robaina") {
+                audioRobaina.play();
+            }
+            if (mejorClase === "asamblea") {
+                audioAsamblea.play();
+            }
+
+            ultimaClaseDetectada = mejorClase;
+
+                    }
+                }
+    </script>
+
+
+
+
+</main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-info">
+        <h3>CECAP Florida</h3>
+        <p>Centros Educativos de Capacitación, Arte y Producción</p>
+        <p><strong>Dirección:</strong> Independencia 462, Florida, Uruguay</p>
+        <p><strong>Teléfono:</strong> +598 4353 0213</p>
+        <p><strong>Email:</strong>cecap.florida@gmail.com </p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="inmaterial.html">inmaterial</a></li>
+          <li><a href="mapa.html">mapa</a></li>
+          <li><a href="material.html">material</a></li>
+          <li><a href="juegos.html">Juegos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>Seguinos</h4>
+        <a href="https://www.facebook.com/share/16VcQAiZtD/" target="_blank">Facebook</a><br>
+        <a href="https://www.instagram.com/cecapflorida/" target="_blank">Instagram</a><br>
+        <a href="https://www.youtube.com/@cecapflorida4983" target="_blank">YouTube</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 CECAP Florida - Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+
+</body>
+</html>
